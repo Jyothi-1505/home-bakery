@@ -434,7 +434,7 @@ height:16px;
 stroke-width:2;
 }
 
-/* RTL DESKTOP LAYOUT */
+/* RTL DESKTOP LAYOUT
 html[dir="rtl"] .brand-logo{
 grid-column:3;
 justify-self:end;
@@ -465,6 +465,279 @@ html[dir="rtl"] .header-actions{
 justify-self:start;
 flex-direction:row;
 direction:ltr;
+} */
+ /* =========================================================
+   BAKERS CORNER - RTL HEADER
+   REVERSE ORDER ONLY
+   ALL ORIGINAL GAPS / PADDING / SIZES STAY THE SAME
+========================================================= */
+
+
+/* =========================================================
+   HEADER GRID
+========================================================= */
+
+html[dir="rtl"] .header-wrapper {
+    /*
+       IMPORTANT:
+       Keep the grid in LTR direction.
+       This prevents the grid itself from changing spacing.
+    */
+    direction: ltr;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+/*
+   LTR:
+   [LOGO] BakersCorner
+
+   RTL:
+   BakersCorner [LOGO]
+*/
+
+html[dir="rtl"] .brand-logo {
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-self: end;
+
+    /*
+       Keep the logo content LTR.
+       Only reverse the logo + website-name positions.
+    */
+    direction: ltr;
+    flex-direction: row-reverse;
+
+    /* SAME AS ORIGINAL */
+    gap: 10px;
+}
+
+
+/*
+   IMPORTANT:
+   Never reverse the actual website name.
+*/
+
+html[dir="rtl"] .brand-logo-text-wrapper {
+    direction: ltr;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+html[dir="rtl"] .brand-logo-bakers,
+html[dir="rtl"] .brand-logo-corner {
+    direction: ltr;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+/*
+   ORIGINAL:
+
+   Home | Products | Recipes & Tips | Bulk Orders | Contact
+
+
+   RTL:
+
+   Contact | Bulk Orders | Recipes & Tips | Products | Home
+*/
+
+
+html[dir="rtl"] .main-navigation {
+    grid-column: 2;
+    grid-row: 1;
+
+    justify-self: center;
+
+    /*
+       Keep navigation itself LTR.
+       This prevents automatic RTL spacing changes.
+    */
+    direction: ltr;
+}
+
+
+html[dir="rtl"] .navigation-list {
+    display: flex;
+
+    /*
+       DO NOT use row-reverse here.
+       We use order below.
+    */
+    flex-direction: row !important;
+
+    direction: ltr !important;
+
+    align-items: center;
+    justify-content: center;
+
+    /*
+       EXACT ORIGINAL GAP
+    */
+    gap: .2rem;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   NAVIGATION ORDER
+========================================================= */
+
+
+/* Home */
+html[dir="rtl"] .navigation-list > .navigation-item:nth-child(1) {
+    order: 5;
+}
+
+
+/* Products */
+html[dir="rtl"] .navigation-list > .navigation-item:nth-child(2) {
+    order: 4;
+}
+
+
+/* Recipes & Tips */
+html[dir="rtl"] .navigation-list > .navigation-item:nth-child(3) {
+    order: 3;
+}
+
+
+/* Bulk Orders */
+html[dir="rtl"] .navigation-list > .navigation-item:nth-child(4) {
+    order: 2;
+}
+
+
+/* Contact */
+html[dir="rtl"] .navigation-list > .navigation-item:nth-child(5) {
+    order: 1;
+}
+
+
+/* Mobile Book Now */
+html[dir="rtl"] .navigation-list > .mobile-book-now-item {
+    order: 6;
+}
+
+
+/* Keep every navigation item itself LTR */
+html[dir="rtl"] .navigation-item {
+    direction: ltr;
+}
+
+
+/* Keep text direction unchanged */
+html[dir="rtl"] .navigation-link,
+html[dir="rtl"] .navigation-dropdown-toggle {
+    direction: ltr;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+/*
+   ORIGINAL HTML:
+
+   Dark Mode
+   RTL
+   Book Now
+
+
+   LTR VISUAL:
+
+   Dark Mode | RTL | Book Now
+
+
+   RTL VISUAL:
+
+   Book Now | RTL | Dark Mode
+*/
+
+
+html[dir="rtl"] .header-actions {
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-self: start;
+
+    display: flex;
+    align-items: center;
+
+    /*
+       Keep LTR direction so button spacing
+       remains exactly the same.
+    */
+    direction: ltr !important;
+
+    flex-direction: row !important;
+
+    /*
+       EXACT ORIGINAL GAP
+    */
+    gap: .6rem;
+}
+
+
+/* Book Now */
+html[dir="rtl"] .header-actions > .header-cta-button {
+    order: 1;
+}
+
+
+/* RTL */
+html[dir="rtl"] .header-actions > #rtl-toggle {
+    order: 2;
+}
+
+
+/* Dark Mode */
+html[dir="rtl"] .header-actions > #theme-toggle {
+    order: 3;
+}
+
+
+/* =========================================================
+   DO NOT CHANGE BUTTON DIMENSIONS
+========================================================= */
+
+html[dir="rtl"] .header-actions .header-control-button {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+}
+
+
+html[dir="rtl"] .header-actions .header-cta-button {
+    min-width: 112px;
+    min-height: 44px;
+
+    padding: .7rem 1.2rem;
+}
+
+
+/* =========================================================
+   HOME DROPDOWN
+========================================================= */
+
+html[dir="rtl"] .home-dropdown {
+    direction: ltr;
+}
+
+
+html[dir="rtl"] .dropdown-link {
+    direction: ltr;
 }
 .mobile-menu-toggle{
 display:none;
@@ -1209,3 +1482,487 @@ direction:ltr;
     }
 
 }
+/* =========================================================
+   BAKERS CORNER HEADER - RTL
+   ONLY REVERSE POSITION
+   KEEP ORIGINAL GRID, GAPS, PADDING AND SIZES
+========================================================= */
+
+
+/* =========================================================
+   1. KEEP THE ORIGINAL HEADER GRID
+========================================================= */
+
+html[dir="rtl"] .header-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+
+    /*
+       IMPORTANT:
+       Same as LTR.
+       Do NOT use flex here.
+    */
+    column-gap: 2rem;
+
+    direction: ltr;
+}
+
+
+/* =========================================================
+   2. LOGO
+========================================================= */
+
+/*
+   LTR:
+   Logo → BakersCorner
+
+   RTL:
+   BakersCorner → Logo
+*/
+
+html[dir="rtl"] .brand-logo {
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-self: end;
+
+    display: inline-flex;
+    align-items: center;
+
+    /*
+       Keep the logo contents themselves LTR.
+    */
+    direction: ltr;
+
+    /*
+       Only swap logo and website name.
+    */
+    flex-direction: row-reverse;
+
+    /*
+       EXACT ORIGINAL GAP
+    */
+    gap: 10px;
+}
+
+
+/* Keep BakersCorner exactly as BakersCorner */
+
+html[dir="rtl"] .brand-logo-text-wrapper {
+    direction: ltr;
+
+    display: inline-flex;
+    flex-direction: row;
+}
+
+html[dir="rtl"] .brand-logo-bakers,
+html[dir="rtl"] .brand-logo-corner {
+    direction: ltr;
+}
+
+
+/* =========================================================
+   3. NAVIGATION POSITION
+========================================================= */
+
+html[dir="rtl"] .main-navigation {
+    grid-column: 2;
+    grid-row: 1;
+
+    justify-self: center;
+
+    /*
+       Keep navigation itself LTR.
+    */
+    direction: ltr;
+}
+
+
+/* =========================================================
+   4. REVERSE NAVIGATION ITEMS
+========================================================= */
+
+/*
+   Original:
+
+   Home
+   Products
+   Recipes & Tips
+   Bulk Orders
+   Contact
+
+
+   RTL:
+
+   Contact
+   Bulk Orders
+   Recipes & Tips
+   Products
+   Home
+*/
+
+html[dir="rtl"] .navigation-list {
+    display: flex;
+
+    flex-direction: row !important;
+    direction: ltr !important;
+
+    align-items: center;
+    justify-content: center;
+
+    /*
+       EXACT ORIGINAL GAP
+    */
+    gap: .2rem;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Contact */
+html[dir="rtl"] .navigation-list > .navigation-item:nth-child(5) {
+    order: 1;
+}
+
+
+/* Bulk Orders */
+html[dir="rtl"] .navigation-list > .navigation-item:nth-child(4) {
+    order: 2;
+}
+
+
+/* Recipes & Tips */
+html[dir="rtl"] .navigation-list > .navigation-item:nth-child(3) {
+    order: 3;
+}
+
+
+/* Products */
+html[dir="rtl"] .navigation-list > .navigation-item:nth-child(2) {
+    order: 4;
+}
+
+
+/* Home */
+html[dir="rtl"] .navigation-list > .navigation-item:nth-child(1) {
+    order: 5;
+}
+
+
+/* Keep navigation text normal */
+html[dir="rtl"] .navigation-item,
+html[dir="rtl"] .navigation-link,
+html[dir="rtl"] .navigation-dropdown-toggle {
+    direction: ltr;
+}
+
+
+/* =========================================================
+   5. HEADER ACTIONS POSITION
+========================================================= */
+
+/*
+   LTR:
+
+   Dark Mode → RTL → Book Now
+
+
+   RTL:
+
+   Book Now → RTL → Dark Mode
+*/
+
+html[dir="rtl"] .header-actions {
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-self: start;
+
+    display: flex;
+    align-items: center;
+
+    direction: ltr !important;
+    flex-direction: row !important;
+
+    /*
+       EXACT ORIGINAL GAP
+    */
+    gap: .6rem;
+}
+
+
+/* Book Now */
+html[dir="rtl"] .header-actions > .header-cta-button {
+    order: 1;
+}
+
+
+/* RTL */
+html[dir="rtl"] .header-actions > #rtl-toggle {
+    order: 2;
+}
+
+
+/* Dark Mode */
+html[dir="rtl"] .header-actions > #theme-toggle {
+    order: 3;
+}
+
+
+/* =========================================================
+   6. KEEP ORIGINAL BUTTON SIZES
+========================================================= */
+
+html[dir="rtl"] .header-control-button {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+}
+
+html[dir="rtl"] .header-cta-button {
+    min-width: 112px;
+    min-height: 44px;
+
+    padding: .7rem 1.2rem;
+}
+
+
+/* =========================================================
+   7. HOME DROPDOWN
+========================================================= */
+
+html[dir="rtl"] .home-dropdown {
+    direction: ltr;
+}
+
+html[dir="rtl"] .dropdown-link {
+    direction: ltr;
+}
+
+/* =========================================================
+   HOME DROPDOWN - OPEN ON HOVER
+   Desktop only
+========================================================= */
+
+@media (min-width: 1025px) {
+
+    /* Open dropdown when hovering over Home */
+    .navigation-item--dropdown:hover > .home-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+    }
+
+    /* Keep Home highlighted while hovering */
+    .navigation-item--dropdown:hover > .navigation-dropdown-toggle {
+        color: var(--color-primary);
+    }
+
+    /* Rotate arrow while hovering */
+    .navigation-item--dropdown:hover
+    > .navigation-dropdown-toggle
+    svg {
+        transform: rotate(180deg);
+    }
+
+    .navigation-item--dropdown:hover
+    > .navigation-dropdown-toggle
+    i {
+        transform: rotate(180deg);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+   Hover should NOT open the dropdown
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .navigation-item--dropdown:hover > .home-dropdown {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, -8px);
+    }
+
+    .navigation-item--dropdown:hover
+    > .navigation-dropdown-toggle {
+        color: inherit;
+    }
+
+}
+
+/* =========================================================
+   MOBILE MENU - HOME DROPDOWN FIX
+   1024px and below
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* Home dropdown item */
+    .navigation-item--dropdown {
+        width: 100%;
+    }
+
+
+    /* Home button */
+    .navigation-item--dropdown
+    .navigation-dropdown-toggle {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       HOME DROPDOWN CLOSED
+    ===================================================== */
+
+    .navigation-item--dropdown
+    .home-dropdown {
+
+        position: static !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        display: block !important;
+
+        opacity: 0 !important;
+        visibility: hidden !important;
+
+        max-height: 0 !important;
+
+        overflow: hidden !important;
+
+        transform: none !important;
+
+        border: 0 !important;
+        box-shadow: none !important;
+
+        border-radius: 0 !important;
+
+        background: transparent !important;
+
+        transition:
+            max-height .3s ease,
+            opacity .25s ease,
+            visibility .25s ease,
+            padding .3s ease !important;
+    }
+
+
+    /* =====================================================
+       HOME DROPDOWN OPEN
+    ===================================================== */
+
+    .navigation-item--dropdown
+    .home-dropdown.is-open {
+
+        position: static !important;
+
+        width: 100% !important;
+
+        max-height: 250px !important;
+
+        margin: 0 !important;
+
+        padding: .4rem 0 !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: none !important;
+
+        overflow: visible !important;
+
+        border: 0 !important;
+
+        box-shadow: none !important;
+
+        background: transparent !important;
+    }
+
+
+    /* =====================================================
+       DROPDOWN LINKS
+    ===================================================== */
+
+    .home-dropdown li {
+        width: 100%;
+    }
+
+
+    .home-dropdown .dropdown-link {
+
+        width: 100%;
+
+        min-height: 44px;
+
+        padding: .65rem 1rem;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 1rem;
+
+        border-radius: 8px;
+
+        background: transparent;
+
+        color: var(--color-text);
+
+        transform: none !important;
+    }
+
+
+    /* Hover / active */
+    .home-dropdown .dropdown-link:hover,
+    .home-dropdown .dropdown-link.active {
+
+        background: var(--color-surface-secondary);
+
+        color: var(--color-primary);
+
+        transform: none !important;
+    }
+
+
+    /* =====================================================
+       ARROW
+    ===================================================== */
+
+    .navigation-dropdown-toggle svg,
+    .navigation-dropdown-toggle i {
+
+        flex-shrink: 0;
+
+        transition: transform .25s ease;
+    }
+
+
+    .navigation-dropdown-toggle[aria-expanded="true"] svg,
+    .navigation-dropdown-toggle[aria-expanded="true"] i {
+
+        transform: rotate(180deg);
+    }
+
+}
+

@@ -1,454 +1,480 @@
-/* =========================================
+/* =========================================================
+   BAKERS CORNER
    BOOK NOW PAGE
-========================================= */
+========================================================= */
 
-.book-page-main {
-    min-height: calc(100vh - 76px);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* =========================================================
+   PAGE
+========================================================= */
 
-    padding: 2.5rem 1rem;
+body {
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
 
     background: var(--color-surface-secondary);
 }
 
 
 /* =========================================================
-   BOOK NOW HEADER - FINAL LTR / RTL FIX
+   MAIN
 ========================================================= */
 
-/* Remove global header spacing */
-body {
-    margin: 0 !important;
-    padding-top: 0 !important;
-    overflow-x: hidden;
-}
+.book-page-main {
 
+    width: 100%;
+    min-height: 100vh;
 
-/* =========================================================
-   HEADER
-========================================================= */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.book-page-header {
-    position: sticky !important;
-    top: 0 !important;
-    left: 0 !important;
+    padding: 58px 20px;
 
-    width: 100% !important;
-    height: 64px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    z-index: 99999 !important;
-
-    background: var(--color-surface);
-
-    border-bottom: 1px solid var(--color-border);
-
-    backdrop-filter: blur(12px);
-}
-
-
-/* =========================================================
-   HEADER INNER
-========================================================= */
-
-.book-header-inner {
-    width: 100% !important;
-    max-width: none !important;
-
-    height: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 16px !important;
-
-    display: flex !important;
-
-    /* IMPORTANT */
-    flex-direction: row !important;
-    direction: ltr !important;
-
-    align-items: center !important;
-    justify-content: space-between !important;
+    background: var(--color-surface-secondary);
 
     box-sizing: border-box;
 }
 
 
 /* =========================================================
-   LTR
-   LOGO = LEFT
-   CONTROLS = RIGHT
+   FORM CARD
 ========================================================= */
 
-.book-header-inner .brand-logo {
-    order: 1 !important;
+.book-form-card {
 
-    display: inline-flex !important;
-    align-items: center !important;
+    position: relative;
 
-    margin: 0 !important;
-    padding: 0 !important;
+    width: 100%;
+    max-width: 1100px;
 
-    flex-shrink: 0 !important;
+    margin: 0 auto;
 
-    gap: 6px;
-}
+    padding: 68px 40px 42px;
 
+    background: var(--color-surface);
 
-.book-header-actions {
-    order: 2 !important;
+    border: 1px solid var(--color-border);
 
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
+    border-radius: 22px;
 
-    margin: 0 !important;
-    padding: 0 !important;
+    box-shadow: 0 15px 40px rgba(41, 33, 27, .06);
 
-    gap: 6px;
+    box-sizing: border-box;
 
-    flex-shrink: 0 !important;
 }
 
 
 /* =========================================================
-   LOGO
+   TOP CONTROLS
 ========================================================= */
 
-.book-header-inner .brand-logo-image {
-    width: 38px;
-    height: 38px;
+.book-card-controls {
+
+    position: absolute;
+
+    top: -20px;
+    right: 20px;
 
     display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   CONTROL BUTTON
+========================================================= */
+
+.book-card-controls .header-control-button {
+
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+    min-height: 44px;
+
+    display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
-}
+    padding: 0;
 
-.book-header-inner .brand-logo-image img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: contain;
-}
-
-
-.book-header-inner .brand-logo-text-wrapper {
-    display: inline-flex !important;
-    align-items: center;
-
-    white-space: nowrap;
-}
-
-
-/* =========================================================
-   HEADER BUTTONS
-========================================================= */
-
-.book-header-actions .header-control-button {
-    width: 34px !important;
-    height: 34px !important;
-
-    min-width: 34px !important;
-    min-height: 34px !important;
-
-    display: inline-flex !important;
-
-    align-items: center !important;
-    justify-content: center !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-primary);
 
     border-radius: 50%;
 
     background: var(--color-surface);
 
-    color: var(--color-secondary);
+    color: var(--color-primary);
 
     font-family: inherit;
 
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
 
+    line-height: 1;
+
     cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease;
 }
 
 
-.book-header-actions .header-control-button svg {
-    width: 15px;
-    height: 15px;
+.book-card-controls .header-control-button svg {
+
+    width: 17px;
+    height: 17px;
+
+    stroke: currentColor;
+
 }
 
 
-/* =========================================================
-   RTL
-   CONTROLS = LEFT
-   LOGO = RIGHT
+.book-card-controls .header-control-button:hover {
 
-   DO NOT USE row-reverse.
-   Only swap order.
-========================================================= */
+    background: var(--color-primary);
 
-html[dir="rtl"] .book-header-inner {
-    direction: ltr !important;
-    flex-direction: row !important;
-}
+    color: var(--color-white);
 
+    border-color: var(--color-primary);
 
-/* Controls move to LEFT */
-html[dir="rtl"] .book-header-actions {
-    order: 1 !important;
-
-    justify-content: flex-start !important;
-}
-
-
-/* Logo moves to RIGHT */
-html[dir="rtl"] .book-header-inner .brand-logo {
-    order: 2 !important;
 }
 
 
 /* =========================================================
-   768px
+   BRAND
 ========================================================= */
 
-@media (max-width: 768px) {
+.book-brand-logo {
 
-    .book-page-header {
-        height: 60px !important;
-    }
+    width: fit-content;
 
-    .book-header-inner {
-        padding: 0 14px !important;
-    }
+    margin: 0 auto 20px;
 
-    .book-header-inner .brand-logo-image {
-        width: 34px;
-        height: 34px;
-    }
+    display: flex;
 
-    .book-header-actions {
-        gap: 5px;
-    }
+    align-items: center;
+    justify-content: center;
 
-    .book-header-actions .header-control-button {
-        width: 32px !important;
-        height: 32px !important;
+    gap: 9px;
 
-        min-width: 32px !important;
-        min-height: 32px !important;
-    }
+    text-decoration: none;
+
+    white-space: nowrap;
+
 }
 
 
-/* =========================================================
-   360px
-========================================================= */
+/* Logo image */
 
-@media (max-width: 360px) {
+.book-brand-image {
 
-    .book-page-header {
-        height: 58px !important;
-    }
+    width: 48px;
+    height: 48px;
 
-    .book-header-inner {
-        padding: 0 10px !important;
-    }
+    display: flex;
 
-    .book-header-inner .brand-logo {
-        gap: 5px;
-    }
+    align-items: center;
+    justify-content: center;
 
-    .book-header-inner .brand-logo-image {
-        width: 30px;
-        height: 30px;
-    }
+    flex-shrink: 0;
 
-    .book-header-actions {
-        gap: 4px;
-    }
-
-    .book-header-actions .header-control-button {
-        width: 30px !important;
-        height: 30px !important;
-
-        min-width: 30px !important;
-        min-height: 30px !important;
-    }
-
-    .book-header-actions .header-control-button svg {
-        width: 13px;
-        height: 13px;
-    }
-
-    #rtl-toggle {
-        font-size: 8px;
-    }
 }
 
-/* =========================================
-   FORM CARD
-========================================= */
 
-.book-form-card {
+.book-brand-image img {
+
     width: 100%;
-    max-width: 850px;
+    height: 100%;
 
-    padding: 2.5rem;
+    object-fit: contain;
 
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-large);
+    display: block;
 
-    background: var(--color-surface);
-
-    box-shadow: var(--shadow-medium);
 }
 
 
-/* =========================================
-   FORM HEADING
-========================================= */
+/* Brand text */
 
-.book-form-heading {
-    max-width: 600px;
+.book-brand-text {
 
-    margin: 0 auto 2rem;
-
-    text-align: center;
-}
-
-.book-form-eyebrow {
     display: inline-flex;
+
     align-items: center;
 
-    gap: .4rem;
+    white-space: nowrap;
 
-    margin-bottom: .7rem;
+}
+
+
+.book-brand-bakers {
 
     color: var(--color-primary);
 
-    font-size: .58rem;
+    font-family:
+        "Bodoni Moda",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 23px;
+
     font-weight: 600;
 
-    letter-spacing: .08em;
+    line-height: 1;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.book-brand-corner {
+
+    color: var(--color-secondary);
+
+    font-family:
+        "Bodoni Moda",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: -.05em;
+
+}
+
+
+/* =========================================================
+   FORM HEADING
+========================================================= */
+
+.book-form-heading {
+
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto 38px;
+
+    text-align: center;
+
+}
+
+
+.book-form-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-bottom: 12px;
+
+    color: var(--color-primary);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: .14em;
 
     text-transform: uppercase;
+
 }
+
 
 .book-form-eyebrow svg {
+
     width: 14px;
     height: 14px;
+
 }
 
+
+/* Heading */
+
 .book-form-heading h1 {
-    margin: 0 0 .6rem;
+
+    margin: 0 0 12px;
 
     color: var(--color-heading);
 
-    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-family:
+        "Bodoni Moda",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
 
     font-weight: 500;
 
-    line-height: 1.1;
+    line-height: 1.05;
 
-    letter-spacing: -.03em;
+    letter-spacing: -.04em;
+
 }
+
 
 .book-form-heading h1 span {
+
     color: var(--color-primary);
+
 }
 
+
 .book-form-heading p {
-    max-width: 500px;
+
+    width: 100%;
+    max-width: 600px;
 
     margin: 0 auto;
 
-    color: var(--color-text);
+    color: var(--color-text-light);
 
     font-size: 16px;
 
-    line-height: 1.7;
+    line-height: 1.65;
+
 }
 
 
-/* =========================================
+/* =========================================================
    FORM
-========================================= */
+========================================================= */
 
 .book-enquiry-form {
+
+    width: 100%;
+
     display: flex;
+
     flex-direction: column;
 
-    gap: 1rem;
+    gap: 19px;
+
 }
 
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
 .book-form-row {
+
+    width: 100%;
+
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 1rem;
+    gap: 24px;
+
 }
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
 
 .book-form-group {
+
+    width: 100%;
+
+    min-width: 0;
+
     display: flex;
+
     flex-direction: column;
 
-    gap: .4rem;
+    gap: 7px;
+
 }
+
 
 .book-form-group label {
+
     color: var(--color-heading);
 
-    font-size: .62rem;
+    font-size: 11px;
+
     font-weight: 600;
+
+    line-height: 1.3;
+
 }
 
 
-/* =========================================
+/* =========================================================
    INPUT WRAPPER
-========================================= */
+========================================================= */
 
 .book-input-wrapper {
+
     position: relative;
 
     width: 100%;
+
 }
 
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
 .book-input-wrapper > svg {
+
     position: absolute;
 
     top: 50%;
-    left: .9rem;
+    left: 15px;
 
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
 
-    color: var(--color-secondary);
+    color: var(--color-primary);
 
     transform: translateY(-50%);
 
     pointer-events: none;
+
+    z-index: 2;
+
 }
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
 
 .book-input-wrapper input,
 .book-input-wrapper select,
 .book-input-wrapper textarea {
+
     width: 100%;
 
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-medium);
+
+    border-radius: 13px;
 
     outline: none;
 
@@ -458,417 +484,371 @@ html[dir="rtl"] .book-header-inner .brand-logo {
 
     font-family: inherit;
 
-    font-size: .65rem;
+    font-size: 13px;
 
     transition:
         border-color .25s ease,
-        box-shadow .25s ease;
+        box-shadow .25s ease,
+        background-color .25s ease;
+
+    box-sizing: border-box;
+
 }
+
 
 .book-input-wrapper input,
 .book-input-wrapper select {
-    height: 45px;
 
-    padding: 0 1rem 0 2.4rem;
+    height: 55px;
+
+    padding: 0 15px 0 43px;
+
 }
+
 
 .book-input-wrapper textarea {
-    min-height: 115px;
 
-    padding: .8rem 1rem .8rem 2.4rem;
+    min-height: 135px;
+
+    padding: 16px 15px 16px 43px;
 
     resize: vertical;
+
 }
+
+
+/* =========================================================
+   SELECT
+========================================================= */
 
 .book-input-wrapper select {
-    appearance: none;
+
+    appearance: auto;
 
     cursor: pointer;
+
 }
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
 
 .book-input-wrapper input::placeholder,
 .book-input-wrapper textarea::placeholder {
-    color: var(--color-text);
 
-    opacity: .6;
+    color: var(--color-text-light);
+
+    opacity: .75;
+
 }
+
+
+/* =========================================================
+   HOVER
+========================================================= */
 
 .book-input-wrapper input:hover,
 .book-input-wrapper select:hover,
 .book-input-wrapper textarea:hover {
-    border-color: var(--color-primary);
+
+    border-color: rgba(180, 83, 9, .45);
+
 }
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
 
 .book-input-wrapper input:focus,
 .book-input-wrapper select:focus,
 .book-input-wrapper textarea:focus {
+
     border-color: var(--color-primary);
 
     box-shadow:
-        0 0 0 3px rgba(180, 83, 9, .1);
+        0 0 0 3px rgba(180, 83, 9, .08);
+
 }
 
 
-/* =========================================
+/* =========================================================
    TEXTAREA ICON
-========================================= */
+========================================================= */
 
 .book-textarea-wrapper > svg {
-    top: 1rem;
+
+    top: 17px;
 
     transform: none;
+
 }
 
 
-/* =========================================
-   SUBMIT BUTTON
-========================================= */
+/* =========================================================
+   SUBMIT
+========================================================= */
 
 .book-submit-button {
+
+    width: 100%;
+    height: 54px;
+
+    margin-top: 3px;
+
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
-    gap: .5rem;
-
-    width: 100%;
-    height: 46px;
-
-    margin-top: .3rem;
+    gap: 9px;
 
     border: 1px solid var(--color-primary);
 
-    border-radius: var(--radius-medium);
+    border-radius: 13px;
 
     background: var(--color-primary);
 
-    color: #ffffff;
+    color: var(--color-white);
 
     font-family: inherit;
 
-    font-size: .68rem;
+    font-size: 13px;
+
     font-weight: 600;
 
     cursor: pointer;
 
     transition:
-        background .25s ease,
+        background-color .25s ease,
         border-color .25s ease,
         transform .25s ease,
         box-shadow .25s ease;
+
 }
+
 
 .book-submit-button svg {
-    width: 15px;
-    height: 15px;
+
+    width: 16px;
+    height: 16px;
 
     transition: transform .25s ease;
+
 }
 
+
 .book-submit-button:hover {
+
     background: var(--color-primary-dark);
 
     border-color: var(--color-primary-dark);
 
     transform: translateY(-2px);
 
-    box-shadow: var(--shadow-small);
+    box-shadow: 0 8px 20px rgba(180, 83, 9, .16);
+
 }
+
 
 .book-submit-button:hover svg {
-    transform: translateX(3px);
+
+    transform: translateX(4px);
+
 }
 
 
-/* =========================================
+/* =========================================================
    FORM NOTE
-========================================= */
+========================================================= */
 
 .book-form-note {
+
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    gap: .35rem;
+    gap: 6px;
 
-    color: var(--color-text);
+    color: var(--color-text-light);
 
-    font-size: .52rem;
+    font-size: 11px;
+
+    line-height: 1.5;
 
     text-align: center;
+
 }
 
+
 .book-form-note svg {
-    width: 12px;
-    height: 12px;
+
+    width: 14px;
+    height: 14px;
 
     flex-shrink: 0;
 
     color: var(--color-primary);
+
 }
 
 
-/* =========================================
+/* =========================================================
+   RTL
+========================================================= */
+
+html[dir="rtl"] .book-card-controls {
+
+    right: auto;
+    left: 20px;
+
+}
+
+
+html[dir="rtl"] .book-brand-logo {
+
+    flex-direction: row-reverse;
+
+}
+
+
+html[dir="rtl"] .book-input-wrapper > svg {
+
+    left: auto;
+    right: 15px;
+
+}
+
+
+html[dir="rtl"] .book-input-wrapper input,
+html[dir="rtl"] .book-input-wrapper select {
+
+    padding-left: 15px;
+    padding-right: 43px;
+
+}
+
+
+html[dir="rtl"] .book-input-wrapper textarea {
+
+    padding-left: 15px;
+    padding-right: 43px;
+
+}
+
+
+html[dir="rtl"] .book-submit-button svg {
+
+    transform: rotate(180deg);
+
+}
+
+
+html[dir="rtl"] .book-submit-button:hover svg {
+
+    transform:
+        rotate(180deg)
+        translateX(4px);
+
+}
+
+
+/* =========================================================
    DARK MODE
-========================================= */
+========================================================= */
 
-.dark-mode .book-page-header {
-    background: var(--color-surface);
+html[data-theme="dark"] .book-page-main {
+
+    background: var(--color-dark-background);
+
 }
 
-.dark-mode .book-form-card {
-    background: var(--color-surface);
+
+html[data-theme="dark"] .book-form-card {
+
+    background: var(--color-dark-surface);
+
 }
 
-.dark-mode .book-input-wrapper input,
-.dark-mode .book-input-wrapper select,
-.dark-mode .book-input-wrapper textarea {
-    background: var(--color-background);
+
+html[data-theme="dark"] .book-input-wrapper input,
+html[data-theme="dark"] .book-input-wrapper select,
+html[data-theme="dark"] .book-input-wrapper textarea {
+
+    background: var(--color-dark-background);
+
 }
 
-/* responsiveness */
 
-/* @media (max-width: 768px) {
+/* =========================================================
+   1024px
+========================================================= */
+
+@media (max-width: 1024px) {
 
     .book-page-main {
-        align-items: flex-start;
 
-        padding: 1.5rem .8rem;
+        padding: 50px 20px;
+
     }
+
 
     .book-form-card {
-        padding: 1.5rem 1.2rem;
+
+        max-width: 900px;
+
+        padding: 62px 32px 38px;
+
+        border-radius: 20px;
+
     }
+
+
+    .book-brand-logo {
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .book-brand-image {
+
+        width: 45px;
+        height: 45px;
+
+    }
+
+
+    .book-brand-bakers,
+    .book-brand-corner {
+
+        font-size: 21px;
+
+    }
+
 
     .book-form-heading {
-        margin-bottom: 1.5rem;
+
+        margin-bottom: 32px;
+
     }
+
 
     .book-form-heading h1 {
-        font-size: 2rem;
+
+        font-size: clamp(2.4rem, 5vw, 3.5rem);
+
     }
 
-    .book-form-heading p {
-        font-size: 16px;
-    }
 
     .book-form-row {
-        grid-template-columns: 1fr;
 
-        gap: 1rem;
+        gap: 18px;
+
     }
 
-    .book-brand-logo span {
-        display: none;
-    }
-
-    .book-header-button {
-        padding-inline: .7rem;
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    .book-page-header {
-        height: 68px;
-    }
-
-    .book-header-inner {
-        width: calc(100% - 1.2rem);
-    }
-
-    .book-brand-logo img {
-        width: 38px;
-        height: 38px;
-    }
-
-    .book-page-main {
-        min-height: calc(100vh - 68px);
-    }
-
-    .book-form-card {
-        padding: 1.3rem 1rem;
-    }
-
-    .book-form-heading h1 {
-        font-size: 1.8rem;
-    }
-
-} */
-
-/* =========================================================
-   BOOK NOW - FINAL HEADER & ALIGNMENT FIX
-========================================================= */
-
-/* Remove global responsiveness spacing */
-body {
-    margin: 0 !important;
-    padding-top: 0 !important;
-    overflow-x: hidden;
-}
-
-/* Header */
-.book-page-header {
-    position: sticky !important;
-    top: 0 !important;
-    left: 0 !important;
-
-    width: 100%;
-    height: 76px;
-
-    margin: 0;
-    padding: 0;
-
-    z-index: 1000;
-
-    display: flex;
-    align-items: center;
-
-    background: var(--color-surface);
-    border-bottom: 1px solid var(--color-border);
-
-    backdrop-filter: blur(12px);
-}
-
-/* Header inner */
-.book-header-inner {
-    width: min(1100px, calc(100% - 2rem));
-    height: 100%;
-
-    margin: 0 auto;
-    padding: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 1rem;
-}
-
-/* Actual logo classes used in HTML */
-.book-header-inner .brand-logo {
-    display: inline-flex;
-    align-items: center;
-
-    gap: .6rem;
-
-    margin: 0;
-    padding: 0;
-
-    flex-shrink: 0;
-
-    text-decoration: none;
-}
-
-/* Logo image */
-.book-header-inner .brand-logo-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 40px;
-    height: 40px;
-
-    flex-shrink: 0;
-}
-
-.book-header-inner .brand-logo-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    display: block;
-}
-
-/* Logo text */
-.book-header-inner .brand-logo-text-wrapper {
-    display: inline-flex;
-    align-items: center;
-
-    white-space: nowrap;
-}
-
-/* Header actions */
-.book-header-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    gap: .5rem;
-
-    margin: 0;
-    padding: 0;
-
-    flex-shrink: 0;
-}
-
-/* Actual button class used in HTML */
-.book-header-actions .header-control-button {
-    width: 36px;
-    height: 36px;
-
-    min-width: 36px;
-    min-height: 36px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0;
-    padding: 0;
-
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
-
-    background: var(--color-surface);
-
-    color: var(--color-secondary);
-
-    font-family: inherit;
-    font-size: .65rem;
-    font-weight: 600;
-
-    cursor: pointer;
-}
-
-/* Icons */
-.book-header-actions .header-control-button svg {
-    width: 15px;
-    height: 15px;
-}
-
-
-/* =========================================================
-   MAIN
-========================================================= */
-
-.book-page-main {
-    width: 100%;
-    min-height: calc(100vh - 76px);
-
-    margin: 0;
-    padding: 2rem 1rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-sizing: border-box;
-}
-
-
-/* =========================================================
-   FORM CARD
-========================================================= */
-
-.book-form-card {
-    width: 100%;
-    max-width: 850px;
-
-    margin: 0 auto;
-
-    box-sizing: border-box;
 }
 
 
@@ -878,58 +858,160 @@ body {
 
 @media (max-width: 768px) {
 
-    body {
-        margin: 0 !important;
-        padding-top: 0 !important;
-    }
-
-    .book-page-header {
-        height: 64px;
-    }
-
-    .book-header-inner {
-        width: calc(100% - 2rem);
-    }
-
-    .book-header-inner .brand-logo-image {
-        width: 36px;
-        height: 36px;
-    }
-
-    .book-header-actions {
-        gap: .4rem;
-    }
-
-    .book-header-actions .header-control-button {
-        width: 34px;
-        height: 34px;
-
-        min-width: 34px;
-        min-height: 34px;
-    }
-
     .book-page-main {
-        min-height: calc(100vh - 64px);
 
-        padding: 1.25rem .8rem;
+        min-height: 100vh;
+
+        padding: 42px 16px;
+
+        align-items: flex-start;
+
     }
+
 
     .book-form-card {
+
         max-width: 650px;
-        padding: 1.5rem 1.25rem;
+
+        padding: 58px 24px 32px;
+
+        border-radius: 18px;
+
     }
+
+
+    .book-card-controls {
+
+        top: -17px;
+        right: 16px;
+
+        gap: 7px;
+
+    }
+
+
+    .book-card-controls .header-control-button {
+
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+    }
+
+
+    .book-card-controls .header-control-button svg {
+
+        width: 15px;
+        height: 15px;
+
+    }
+
+
+    .book-brand-logo {
+
+        gap: 7px;
+
+        margin-bottom: 16px;
+
+    }
+
+
+    .book-brand-image {
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+
+    .book-brand-bakers,
+    .book-brand-corner {
+
+        font-size: 20px;
+
+    }
+
 
     .book-form-heading {
-        margin-bottom: 1.5rem;
+
+        max-width: 580px;
+
+        margin-bottom: 28px;
+
     }
+
+
+    .book-form-eyebrow {
+
+        font-size: 10px;
+
+    }
+
 
     .book-form-heading h1 {
-        font-size: 2rem;
+
+        font-size: clamp(2.2rem, 6vw, 3.1rem);
+
     }
 
-    .book-form-row {
-        grid-template-columns: 1fr 1fr;
+
+    .book-form-heading p {
+
+        font-size: 16px;
+
     }
+
+
+    .book-enquiry-form {
+
+        gap: 16px;
+
+    }
+
+
+    .book-form-row {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 14px;
+
+    }
+
+
+    .book-form-group label {
+
+        font-size: 10px;
+
+    }
+
+
+    .book-input-wrapper input,
+    .book-input-wrapper select {
+
+        height: 52px;
+
+        font-size: 12px;
+
+    }
+
+
+    .book-input-wrapper textarea {
+
+        min-height: 120px;
+
+        font-size: 12px;
+
+    }
+
+
+    .book-submit-button {
+
+        height: 52px;
+
+    }
+
 }
 
 
@@ -939,96 +1021,405 @@ body {
 
 @media (max-width: 360px) {
 
-    body {
-        margin: 0 !important;
-        padding-top: 0 !important;
-    }
-
-    .book-page-header {
-        height: 58px;
-    }
-
-    .book-header-inner {
-        width: calc(100% - 1rem);
-    }
-
-    .book-header-inner .brand-logo {
-        gap: .35rem;
-    }
-
-    .book-header-inner .brand-logo-image {
-        width: 30px;
-        height: 30px;
-    }
-
-    /* Hide text if it makes header crowded */
-    .book-header-inner .brand-logo-text-wrapper {
-        display: none;
-    }
-
-    .book-header-actions {
-        gap: .3rem;
-    }
-
-    .book-header-actions .header-control-button {
-        width: 30px;
-        height: 30px;
-
-        min-width: 30px;
-        min-height: 30px;
-    }
-
-    .book-header-actions .header-control-button svg {
-        width: 13px;
-        height: 13px;
-    }
-
-    #rtl-toggle {
-        font-size: 8px;
-    }
-
     .book-page-main {
-        min-height: calc(100vh - 58px);
 
-        padding: .8rem .6rem;
+        padding: 35px 8px 25px;
+
+        align-items: flex-start;
+
     }
+
 
     .book-form-card {
-        width: 100%;
-        padding: 1.25rem .9rem;
 
-        border-radius: 14px;
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 48px 14px 25px;
+
+        border-radius: 15px;
+
     }
+
+
+    .book-card-controls {
+
+        top: -14px;
+
+        right: 10px;
+
+        gap: 5px;
+
+    }
+
+
+    .book-card-controls .header-control-button {
+
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+        min-height: 32px;
+
+        font-size: 8px;
+
+    }
+
+
+    .book-card-controls .header-control-button svg {
+
+        width: 13px;
+        height: 13px;
+
+    }
+
+
+    .book-brand-logo {
+
+        gap: 5px;
+
+        margin-bottom: 14px;
+
+    }
+
+
+    .book-brand-image {
+
+        width: 34px;
+        height: 34px;
+
+    }
+
+
+    .book-brand-bakers,
+    .book-brand-corner {
+
+        font-size: 17px;
+
+    }
+
 
     .book-form-heading {
-        margin-bottom: 1.2rem;
+
+        margin-bottom: 23px;
+
     }
+
+
+    .book-form-eyebrow {
+
+        gap: 4px;
+
+        margin-bottom: 9px;
+
+        font-size: 8px;
+
+        letter-spacing: .11em;
+
+    }
+
+
+    .book-form-eyebrow svg {
+
+        width: 12px;
+        height: 12px;
+
+    }
+
 
     .book-form-heading h1 {
-        font-size: 1.75rem;
-        line-height: 1.15;
+
+        margin-bottom: 10px;
+
+        font-size: 2rem;
+
+        line-height: 1.05;
+
     }
+
 
     .book-form-heading p {
+
         font-size: 16px;
+
         line-height: 1.5;
+
     }
 
-    .book-form-row {
-        grid-template-columns: 1fr;
-        gap: .8rem;
-    }
 
     .book-enquiry-form {
-        gap: .8rem;
+
+        gap: 13px;
+
     }
+
+
+    /* One column */
+
+    .book-form-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+
+    }
+
+
+    .book-form-group {
+
+        gap: 5px;
+
+    }
+
+
+    .book-form-group label {
+
+        font-size: 9px;
+
+    }
+
 
     .book-input-wrapper input,
     .book-input-wrapper select {
-        height: 43px;
+
+        height: 48px;
+
+        padding-left: 40px;
+
+        padding-right: 10px;
+
+        border-radius: 11px;
+
+        font-size: 11px;
+
     }
 
+
     .book-input-wrapper textarea {
+
         min-height: 105px;
+
+        padding-left: 40px;
+
+        padding-right: 10px;
+
+        border-radius: 11px;
+
+        font-size: 11px;
+
     }
+
+
+    .book-input-wrapper > svg {
+
+        left: 13px;
+
+        width: 14px;
+        height: 14px;
+
+    }
+
+
+    .book-textarea-wrapper > svg {
+
+        top: 14px;
+
+    }
+
+
+    .book-submit-button {
+
+        height: 48px;
+
+        border-radius: 11px;
+
+        font-size: 11px;
+
+    }
+
+
+    .book-submit-button svg {
+
+        width: 14px;
+        height: 14px;
+
+    }
+
+
+    .book-form-note {
+
+        font-size: 9px;
+
+    }
+
+
+    .book-form-note svg {
+
+        width: 12px;
+        height: 12px;
+
+    }
+
+
+    /* RTL */
+
+    html[dir="rtl"] .book-card-controls {
+
+        right: auto;
+
+        left: 10px;
+
+    }
+
+
+    html[dir="rtl"] .book-input-wrapper > svg {
+
+        left: auto;
+
+        right: 13px;
+
+    }
+
+
+    html[dir="rtl"] .book-input-wrapper input,
+    html[dir="rtl"] .book-input-wrapper select {
+
+        padding-left: 10px;
+
+        padding-right: 40px;
+
+    }
+
+
+    html[dir="rtl"] .book-input-wrapper textarea {
+
+        padding-left: 10px;
+
+        padding-right: 40px;
+
+    }
+
+}
+
+/* =========================================================
+   DATE INPUT - DARK MODE CALENDAR ICON
+========================================================= */
+
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* =========================================================
+   BOOK NOW - RTL BRAND FIX
+   Only swap Logo + Name
+   Never reverse BakersCorner text
+========================================================= */
+
+html[dir="rtl"] .book-brand-logo {
+    direction: ltr !important;
+    flex-direction: row-reverse !important;
+}
+
+
+/* Keep the complete brand text LTR */
+html[dir="rtl"] .book-brand-text {
+    direction: ltr !important;
+
+    display: inline-flex !important;
+    flex-direction: row !important;
+
+    unicode-bidi: isolate !important;
+
+    text-align: left !important;
+}
+
+
+/* Keep individual words in their original order */
+html[dir="rtl"] .book-brand-bakers,
+html[dir="rtl"] .book-brand-corner {
+    direction: ltr !important;
+
+    unicode-bidi: isolate !important;
+
+    text-align: left !important;
+}
+
+
+/* Prevent inherited RTL text direction */
+html[dir="rtl"] .book-brand-bakers::before,
+html[dir="rtl"] .book-brand-corner::before {
+    direction: ltr !important;
+}
+
+
+/* =========================================================
+   REQUIRED DATE - CLEAN DATE FIELD
+========================================================= */
+
+.book-date-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+/* Date input */
+
+.book-date-wrapper #required-date {
+    width: 100%;
+
+    direction: ltr;
+    text-align: left;
+
+    padding-left: 15px;
+    padding-right: 43px;
+}
+
+
+/* Native calendar icon */
+
+.book-date-wrapper #required-date::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    cursor: pointer;
+
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+html[dir="rtl"] .book-date-group > label {
+    text-align: right;
+}
+
+
+html[dir="rtl"] .book-date-wrapper {
+    direction: ltr;
+}
+
+
+html[dir="rtl"] .book-date-wrapper #required-date {
+    direction: ltr;
+
+    text-align: left;
+
+    padding-left: 15px;
+    padding-right: 43px;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"]
+.book-date-wrapper #required-date::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+
+    opacity: 1;
 }

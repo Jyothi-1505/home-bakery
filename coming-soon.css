@@ -1,6 +1,6 @@
 /* =========================================================
    BAKERS CORNER
-   404 PAGE
+   COMING SOON PAGE
 ========================================================= */
 
 
@@ -8,7 +8,7 @@
    PAGE
 ========================================================= */
 
-.error-page {
+.coming-page {
 
     width: 100%;
     min-height: 100vh;
@@ -28,10 +28,10 @@
 
 
 /* =========================================================
-   404 CARD
+   CARD
 ========================================================= */
 
-.error-card {
+.coming-card {
 
     position: relative;
 
@@ -59,7 +59,7 @@
    CARD HEADER
 ========================================================= */
 
-.error-card-header {
+.coming-card-header {
 
     width: 100%;
     min-height: 72px;
@@ -82,10 +82,10 @@
 
 /* =========================================================
    LOGO
-   Same structure as your main header
+   Same as main website header
 ========================================================= */
 
-.error-card-header .brand-logo {
+.coming-card-header .brand-logo {
 
     display: inline-flex;
 
@@ -99,9 +99,7 @@
 }
 
 
-/* Logo image */
-
-.error-card-header .brand-logo-image {
+.coming-card-header .brand-logo-image {
 
     display: flex;
 
@@ -111,7 +109,8 @@
     flex-shrink: 0;
 }
 
-.error-card-header .brand-logo-image img {
+
+.coming-card-header .brand-logo-image img {
 
     width: 38px;
     height: 38px;
@@ -122,9 +121,7 @@
 }
 
 
-/* Website name */
-
-.error-card-header .brand-logo-text-wrapper {
+.coming-card-header .brand-logo-text-wrapper {
 
     display: flex;
 
@@ -133,8 +130,9 @@
     gap: 0;
 }
 
-.error-card-header .brand-logo-bakers,
-.error-card-header .brand-logo-corner {
+
+.coming-card-header .brand-logo-bakers,
+.coming-card-header .brand-logo-corner {
 
     font-size: .85rem;
 
@@ -145,12 +143,14 @@
     letter-spacing: -.03em;
 }
 
-.error-card-header .brand-logo-bakers {
+
+.coming-card-header .brand-logo-bakers {
 
     color: var(--color-secondary);
 }
 
-.error-card-header .brand-logo-corner {
+
+.coming-card-header .brand-logo-corner {
 
     color: var(--color-primary);
 }
@@ -160,7 +160,7 @@
    HEADER ACTIONS
 ========================================================= */
 
-.error-card-header .header-actions {
+.coming-card-header .header-actions {
 
     display: flex;
 
@@ -174,9 +174,7 @@
 }
 
 
-/* Same button style */
-
-.error-card-header .header-control-button {
+.coming-card-header .header-control-button {
 
     width: 35px;
     height: 35px;
@@ -202,13 +200,11 @@
 
     cursor: pointer;
 
-    transition:
-        color .25s ease,
-        border-color .25s ease,
-        transform .25s ease;
+    transition: all .25s ease;
 }
 
-.error-card-header .header-control-button:hover {
+
+.coming-card-header .header-control-button:hover {
 
     color: var(--color-primary);
 
@@ -217,7 +213,8 @@
     transform: translateY(-2px);
 }
 
-.error-card-header .header-control-button svg {
+
+.coming-card-header .header-control-button svg {
 
     width: 14px;
     height: 14px;
@@ -228,7 +225,7 @@
    CONTENT
 ========================================================= */
 
-.error-content {
+.coming-content {
 
     position: relative;
 
@@ -246,70 +243,46 @@
 
     text-align: center;
 
-    padding: 45px 30px;
+    padding: 50px 30px;
 
     box-sizing: border-box;
 }
 
 
 /* =========================================================
-   404 NUMBER
+   DECORATIVE ICON
 ========================================================= */
 
-.error-number {
+.coming-icon {
+
+    width: 82px;
+    height: 82px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    margin-bottom: 25px;
 
-    margin-bottom: 22px;
-
-    color: var(--color-secondary);
-
-    font-size: clamp(6rem, 14vw, 9rem);
-
-    font-weight: 600;
-
-    line-height: .75;
-
-    letter-spacing: -.08em;
-}
-
-
-/* =========================================================
-   COOKIE ICON
-========================================================= */
-
-.error-cookie {
-
-    width: 88px;
-    height: 88px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+    border: 1px solid var(--color-primary);
 
     border-radius: 50%;
 
-    background: var(--color-primary);
+    background: rgba(180, 83, 9, .07);
 
-    color: #fff;
+    color: var(--color-primary);
 
-    transform: rotate(-8deg);
-
-    flex-shrink: 0;
+    transform: rotate(-6deg);
 }
 
-.error-cookie svg {
 
-    width: 45px;
-    height: 45px;
+.coming-icon svg {
 
-    stroke-width: 1.5;
+    width: 38px;
+    height: 38px;
+
+    stroke-width: 1.4;
 }
 
 
@@ -317,11 +290,11 @@
    EYEBROW
 ========================================================= */
 
-.error-eyebrow {
+.coming-eyebrow {
 
     display: block;
 
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 
     color: var(--color-primary);
 
@@ -329,7 +302,7 @@
 
     font-weight: 600;
 
-    letter-spacing: .17em;
+    letter-spacing: .18em;
 }
 
 
@@ -337,25 +310,26 @@
    HEADING
 ========================================================= */
 
-.error-content h1 {
+.coming-content h1 {
 
     width: 100%;
-    max-width: 650px;
+    max-width: 680px;
 
     margin: 0 auto 18px;
 
     color: var(--color-secondary);
 
-    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-size: clamp(3rem, 6vw, 5rem);
 
     font-weight: 500;
 
-    line-height: .95;
+    line-height: .92;
 
     letter-spacing: -.055em;
 }
 
-.error-content h1 em {
+
+.coming-content h1 em {
 
     color: var(--color-primary);
 
@@ -371,12 +345,12 @@
    DESCRIPTION
 ========================================================= */
 
-.error-content > p {
+.coming-content > p {
 
     width: 100%;
-    max-width: 500px;
+    max-width: 510px;
 
-    margin: 0 auto 27px;
+    margin: 0 auto 28px;
 
     color: var(--color-text);
 
@@ -389,36 +363,29 @@
 
 
 /* =========================================================
-   BUTTONS
+   HOME BUTTON
 ========================================================= */
 
-.error-actions {
+.coming-home-button {
 
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-}
-
-.error-primary-button,
-.error-secondary-button {
-
-    min-height: 44px;
+    min-height: 45px;
 
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
+    gap: 9px;
 
-    padding: 0 20px;
+    padding: 0 23px;
 
     border-radius: 25px;
+
+    background: var(--color-primary);
+
+    border: 1px solid var(--color-primary);
+
+    color: #fff;
 
     font-size: .48rem;
 
@@ -432,18 +399,7 @@
 }
 
 
-/* Primary */
-
-.error-primary-button {
-
-    background: var(--color-primary);
-
-    border: 1px solid var(--color-primary);
-
-    color: #fff;
-}
-
-.error-primary-button:hover {
+.coming-home-button:hover {
 
     background: var(--color-secondary);
 
@@ -455,28 +411,7 @@
 }
 
 
-/* Secondary */
-
-.error-secondary-button {
-
-    background: transparent;
-
-    border: 1px solid var(--color-border);
-
-    color: var(--color-secondary);
-}
-
-.error-secondary-button:hover {
-
-    color: var(--color-primary);
-
-    border-color: var(--color-primary);
-
-    transform: translateY(-2px);
-}
-
-.error-primary-button svg,
-.error-secondary-button svg {
+.coming-home-button svg {
 
     width: 13px;
     height: 13px;
@@ -487,7 +422,7 @@
    BOTTOM
 ========================================================= */
 
-.error-bottom {
+.coming-bottom {
 
     display: flex;
 
@@ -496,10 +431,11 @@
 
     gap: 10px;
 
-    margin-top: 45px;
+    margin-top: 48px;
 }
 
-.error-bottom span {
+
+.coming-bottom span {
 
     width: 35px;
 
@@ -510,7 +446,8 @@
     opacity: .6;
 }
 
-.error-bottom p {
+
+.coming-bottom p {
 
     margin: 0;
 
@@ -530,32 +467,15 @@
    RTL
 ========================================================= */
 
-/*
-   Normal:
-   Logo + Name             Dark + RTL
-
-   RTL:
-   Dark + RTL              Logo + Name
-*/
-
-[dir="rtl"] .error-card-header {
+[dir="rtl"] .coming-card-header {
 
     flex-direction: row-reverse;
 }
 
-[dir="rtl"] .error-card-header .header-actions {
+
+[dir="rtl"] .coming-card-header .header-actions {
 
     justify-content: flex-start;
-}
-
-[dir="rtl"] .error-number {
-
-    flex-direction: row-reverse;
-}
-
-[dir="rtl"] .error-actions {
-
-    flex-direction: row-reverse;
 }
 
 
@@ -563,86 +483,79 @@
    DARK MODE
 ========================================================= */
 
-.dark-mode .error-card {
+.dark-mode .coming-card {
 
     background: var(--color-surface);
 
     border-color: var(--color-border);
 }
 
-.dark-mode .error-card-header {
+
+.dark-mode .coming-card-header {
 
     background: var(--color-surface);
 
     border-color: var(--color-border);
 }
-
 /* =========================================================
    1024px
 ========================================================= */
 
 @media (max-width: 1024px) {
 
-    .error-page {
+    .coming-page {
 
         padding: 20px;
     }
 
-    .error-card {
+    .coming-card {
 
         max-width: 850px;
 
         min-height: 600px;
     }
 
-    .error-card-header {
+    .coming-card-header {
 
         min-height: 70px;
 
         padding: 0 22px;
     }
 
-    .error-card-header .brand-logo-image img {
+    .coming-card-header .brand-logo-image img {
 
         width: 36px;
         height: 36px;
     }
 
-    .error-content {
+    .coming-content {
 
-        padding: 40px 25px;
+        padding: 45px 25px;
     }
 
-    .error-number {
+    .coming-icon {
 
-        font-size: clamp(5.8rem, 13vw, 8rem);
+        width: 78px;
+        height: 78px;
     }
 
-    .error-cookie {
+    .coming-content h1 {
 
-        width: 82px;
-        height: 82px;
-    }
-
-    .error-cookie svg {
-
-        width: 42px;
-        height: 42px;
+        font-size: clamp(3rem, 6vw, 4.5rem);
     }
 }
-
 /* =========================================================
    768px - IPAD MINI
 ========================================================= */
 
 @media (max-width: 768px) {
 
-    .error-page {
+    .coming-page {
 
         padding: 15px;
     }
 
-    .error-card {
+    .coming-card {
 
         width: 100%;
         max-width: 650px;
@@ -653,38 +566,38 @@
     }
 
 
-    /* ---------- CARD HEADER ---------- */
+    /* ---------- HEADER ---------- */
 
-    .error-card-header {
+    .coming-card-header {
 
         min-height: 68px;
 
         padding: 0 18px;
     }
 
-    .error-card-header .brand-logo {
+    .coming-card-header .brand-logo {
 
         gap: 6px;
     }
 
-    .error-card-header .brand-logo-image img {
+    .coming-card-header .brand-logo-image img {
 
         width: 34px;
         height: 34px;
     }
 
-    .error-card-header .brand-logo-bakers,
-    .error-card-header .brand-logo-corner {
+    .coming-card-header .brand-logo-bakers,
+    .coming-card-header .brand-logo-corner {
 
         font-size: .78rem;
     }
 
-    .error-card-header .header-actions {
+    .coming-card-header .header-actions {
 
         gap: 6px;
     }
 
-    .error-card-header .header-control-button {
+    .coming-card-header .header-control-button {
 
         width: 32px;
         height: 32px;
@@ -693,57 +606,46 @@
 
     /* ---------- CONTENT ---------- */
 
-    .error-content {
+    .coming-content {
 
         padding: 40px 20px;
     }
 
 
-    /* ---------- NUMBER ---------- */
-
-    .error-number {
-
-        gap: 7px;
-
-        margin-bottom: 20px;
-
-        font-size: clamp(5rem, 16vw, 7rem);
-    }
-
-    .error-cookie {
+    .coming-icon {
 
         width: 72px;
         height: 72px;
+
+        margin-bottom: 22px;
     }
 
-    .error-cookie svg {
+    .coming-icon svg {
 
-        width: 37px;
-        height: 37px;
+        width: 34px;
+        height: 34px;
     }
 
 
-    /* ---------- TEXT ---------- */
+    .coming-eyebrow {
 
-    .error-eyebrow {
-
-        font-size: .44rem;
+        font-size: .43rem;
 
         margin-bottom: 12px;
     }
 
-    .error-content h1 {
+
+    .coming-content h1 {
 
         max-width: 580px;
 
-        font-size: clamp(2.4rem, 7vw, 3.6rem);
+        font-size: clamp(2.8rem, 7vw, 4rem);
 
-        line-height: .97;
-
-        margin-bottom: 16px;
+        line-height: .95;
     }
 
-    .error-content > p {
+
+    .coming-content > p {
 
         max-width: 480px;
 
@@ -755,46 +657,33 @@
     }
 
 
-    /* ---------- BUTTONS ---------- */
+    .coming-home-button {
 
-    .error-actions {
+        min-height: 43px;
 
-        gap: 8px;
-    }
-
-    .error-primary-button,
-    .error-secondary-button {
-
-        min-height: 42px;
-
-        padding: 0 17px;
+        padding: 0 19px;
 
         font-size: .45rem;
     }
 
 
-    /* ---------- BOTTOM ---------- */
+    .coming-bottom {
 
-    .error-bottom {
-
-        margin-top: 38px;
-
-        gap: 8px;
+        margin-top: 40px;
     }
 
-    .error-bottom span {
+    .coming-bottom span {
 
         width: 30px;
     }
 }
-
 /* =========================================================
    360px - SAMSUNG GALAXY S8+
 ========================================================= */
 
 @media (max-width: 360px) {
 
-    .error-page {
+    .coming-page {
 
         width: 100%;
 
@@ -805,7 +694,8 @@
         box-sizing: border-box;
     }
 
-    .error-card {
+
+    .coming-card {
 
         width: 100%;
         max-width: 100%;
@@ -816,38 +706,38 @@
     }
 
 
-    /* ---------- CARD HEADER ---------- */
+    /* ---------- HEADER ---------- */
 
-    .error-card-header {
+    .coming-card-header {
 
         min-height: 62px;
 
         padding: 0 11px;
     }
 
-    .error-card-header .brand-logo {
+    .coming-card-header .brand-logo {
 
         gap: 5px;
     }
 
-    .error-card-header .brand-logo-image img {
+    .coming-card-header .brand-logo-image img {
 
         width: 29px;
         height: 29px;
     }
 
-    .error-card-header .brand-logo-bakers,
-    .error-card-header .brand-logo-corner {
+    .coming-card-header .brand-logo-bakers,
+    .coming-card-header .brand-logo-corner {
 
         font-size: .68rem;
     }
 
-    .error-card-header .header-actions {
+    .coming-card-header .header-actions {
 
         gap: 5px;
     }
 
-    .error-card-header .header-control-button {
+    .coming-card-header .header-control-button {
 
         width: 29px;
         height: 29px;
@@ -855,7 +745,7 @@
         font-size: .38rem;
     }
 
-    .error-card-header .header-control-button svg {
+    .coming-card-header .header-control-button svg {
 
         width: 12px;
         height: 12px;
@@ -864,30 +754,23 @@
 
     /* ---------- CONTENT ---------- */
 
-    .error-content {
+    .coming-content {
 
         padding: 30px 14px;
     }
 
 
-    /* ---------- NUMBER ---------- */
+    /* ---------- ICON ---------- */
 
-    .error-number {
+    .coming-icon {
 
-        gap: 4px;
+        width: 60px;
+        height: 60px;
 
-        margin-bottom: 18px;
-
-        font-size: 4.7rem;
+        margin-bottom: 20px;
     }
 
-    .error-cookie {
-
-        width: 56px;
-        height: 56px;
-    }
-
-    .error-cookie svg {
+    .coming-icon svg {
 
         width: 29px;
         height: 29px;
@@ -896,11 +779,11 @@
 
     /* ---------- EYEBROW ---------- */
 
-    .error-eyebrow {
+    .coming-eyebrow {
 
-        font-size: .36rem;
+        font-size: .35rem;
 
-        letter-spacing: .11em;
+        letter-spacing: .1em;
 
         margin-bottom: 10px;
     }
@@ -908,23 +791,25 @@
 
     /* ---------- HEADING ---------- */
 
-    .error-content h1 {
+    .coming-content h1 {
 
         width: 100%;
 
-        font-size: 2.2rem;
+        max-width: 310px;
+
+        font-size: 2.35rem;
 
         line-height: .98;
 
         letter-spacing: -.045em;
 
-        margin-bottom: 13px;
+        margin-bottom: 14px;
     }
 
 
     /* ---------- DESCRIPTION ---------- */
 
-    .error-content > p {
+    .coming-content > p {
 
         width: 100%;
 
@@ -934,27 +819,13 @@
 
         line-height: 1.55;
 
-        margin-bottom: 21px;
+        margin-bottom: 22px;
     }
 
 
-    /* ---------- BUTTONS ---------- */
+    /* ---------- BUTTON ---------- */
 
-    .error-actions {
-
-        width: 100%;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 8px;
-    }
-
-    .error-primary-button,
-    .error-secondary-button {
+    .coming-home-button {
 
         width: 100%;
 
@@ -964,7 +835,7 @@
 
         padding: 0 12px;
 
-        font-size: .39rem;
+        font-size: .4rem;
 
         box-sizing: border-box;
     }
@@ -972,36 +843,24 @@
 
     /* ---------- BOTTOM ---------- */
 
-    .error-bottom {
+    .coming-bottom {
 
         width: 100%;
 
-        margin-top: 27px;
+        margin-top: 30px;
 
         gap: 6px;
     }
 
-    .error-bottom span {
+    .coming-bottom span {
 
         width: 18px;
     }
 
-    .error-bottom p {
+    .coming-bottom p {
 
         font-size: .3rem;
 
         letter-spacing: .08em;
-    }
-
-
-    /* ---------- OVERFLOW SAFETY ---------- */
-
-    .error-card,
-    .error-card-header,
-    .error-content {
-
-        max-width: 100%;
-
-        box-sizing: border-box;
     }
 }

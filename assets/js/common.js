@@ -79,17 +79,103 @@ openMobileMenu();
 }
 });
 }
-if(homeDropdownToggle&&homeDropdown){
-homeDropdownToggle.addEventListener("click",function(event){
-event.stopPropagation();
-const isOpen=homeDropdown.classList.contains("is-open");
-if(isOpen){
-closeHomeDropdown();
-}else{
-homeDropdownToggle.setAttribute("aria-expanded","true");
-homeDropdown.classList.add("is-open");
-}
-});
+// if(homeDropdownToggle&&homeDropdown){
+// homeDropdownToggle.addEventListener("click",function(event){
+// event.stopPropagation();
+// const isOpen=homeDropdown.classList.contains("is-open");
+// if(isOpen){
+// closeHomeDropdown();
+// }else{
+// homeDropdownToggle.setAttribute("aria-expanded","true");
+// homeDropdown.classList.add("is-open");
+// }
+// });
+// }
+/* =========================================================
+   HOME DROPDOWN
+   Desktop = Hover
+   Mobile / Tablet = Click
+========================================================= */
+
+if(homeDropdownToggle && homeDropdown){
+
+    /* -----------------------------------------
+       MOBILE / TABLET CLICK
+    ----------------------------------------- */
+
+    homeDropdownToggle.addEventListener("click", function(event){
+
+        event.stopPropagation();
+
+        /*
+           On desktop, hover controls the dropdown.
+           Click does not need to toggle it.
+        */
+        if(window.innerWidth > 1024){
+            return;
+        }
+
+        const isOpen =
+            homeDropdown.classList.contains("is-open");
+
+        if(isOpen){
+
+            closeHomeDropdown();
+
+        }else{
+
+            homeDropdownToggle.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            homeDropdown.classList.add("is-open");
+        }
+
+    });
+
+
+    /* -----------------------------------------
+       DESKTOP HOVER
+    ----------------------------------------- */
+
+    const homeDropdownParent =
+        homeDropdownToggle.closest(
+            ".navigation-item--dropdown"
+        );
+
+    if(homeDropdownParent){
+
+        homeDropdownParent.addEventListener(
+            "mouseenter",
+            function(){
+
+                if(window.innerWidth > 1024){
+
+                    homeDropdownToggle.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+                    homeDropdown.classList.add("is-open");
+                }
+
+            }
+        );
+
+        homeDropdownParent.addEventListener(
+            "mouseleave",
+            function(){
+
+                if(window.innerWidth > 1024){
+
+                    closeHomeDropdown();
+                }
+
+            }
+        );
+    }
+
 }
 document.addEventListener("click",function(event){
 if(homeDropdown&&homeDropdownToggle&&!homeDropdown.contains(event.target)&&!homeDropdownToggle.contains(event.target)){
